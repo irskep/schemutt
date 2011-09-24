@@ -6,10 +6,6 @@ from xml.sax import make_parser
 from xml.sax.handler import ContentHandler
 
 
-# Maximum length of the attribute example string. Go longer for more examples.
-MAX_ATTR_DISPLAY_SIZE = 40
-
-
 class GenericHandler(ContentHandler):
 
     def __init__(self):
@@ -50,21 +46,26 @@ def parse_file_at_path(path):
     return handler.tree
 
 
-def print_subtree(subtree, indent=''):
+def print_subtree(subtree, line_length, indent=''):
     print('{0}<{1}>'.format(indent, subtree['name']))
     for attr, values in subtree['attributes'].items():
         ex_values = {values.pop()}
-        while values and len(repr(ex_values)) < 40:
+        while values and len(repr(ex_values)) < line_length:
             ex_values.add(values.pop())
         print('{0}  {1} = {2}'.format(indent, attr, ex_values))
     new_indent = indent + '  '
     for child in subtree['children'].values():
-        print_subtree(child, new_indent)
+        print_subtree(child, line_length, new_indent)
 
 
 def make_arg_parser():
-    parser = argparse.ArgumentParser(description='Attempt to derive and display a basic outline of the schema of an XML document')
+    parser = argparse.ArgumentParser(description='Attempt to derive and display'
+                                     ' a basic outline of the schema of an XML'
+                                     ' document')
     parser.add_argument('path', type=str, nargs='+', help='Path to an XML document')
+    parser.add_argument('--line-length', type=int, dest='line_length', default=40,
+                        help='Maximum number of characters in a line (use more'
+                        ' to see more attribute examples)')
     return parser
 
 
@@ -72,4 +73,4 @@ if __name__ == '__main__':
     args = make_arg_parser().parse_args()
     for path in args.path:
         print(path)
-        print_subtree(parse_file_at_path(path))
+        print_subtree(parse_file_at_path(path), args.line_length)

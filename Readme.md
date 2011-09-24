@@ -1,7 +1,8 @@
 Schemutt
 ========
 
-Schemutt is an XML schema figure-outer. I wrote it to help me understand some undocumented APIs.
+Schemutt is an XML schema figure-outer. I wrote it to help me understand some
+undocumented APIs.
 
 This script will run on Python 2.7 and 3.2.
 
@@ -14,6 +15,9 @@ Output Format
       Attribute2 = {'attribute value 3', 'attribute value 4', ...}
       <ChildTag>
         ...
+
+Attribute examples are chosen at random. The number of examples shown is
+limited by the `--line-length` switch.
 
 Example output:
 
