@@ -40,7 +40,6 @@ class GenericHandler(ContentHandler):
     def __init__(self):
         self.tree = None
         self.stack = []
-        self.attr_value_index = defaultdict(lambda: defaultdict(lambda: 0))
 
     def startElement(self, name, attributes):
         if self.stack:
@@ -54,7 +53,6 @@ class GenericHandler(ContentHandler):
         for attr_name in attributes.getNames():
             attr_value = attributes.getValue(attr_name)
             my_elem.add_attr_value(attr_name, attr_value)
-            self.attr_value_index[attr_value][stack_key_path(self.stack + [my_elem], attr_name)] += 1
 
         self.stack.append(my_elem)
 
@@ -67,7 +65,7 @@ def parse_file_at_path(path):
     handler = GenericHandler()
     parser.setContentHandler(handler)
     parser.parse(path)
-    return handler.tree, handler.attr_value_index
+    return handler.tree
 
 
 def all_attr_values(tree):
@@ -80,7 +78,7 @@ def all_attr_values(tree):
             stack.append(child_node)
 
 
-def find_foreign_keys(tree, attr_value_index):
+def find_foreign_keys(tree):
     for node, attr_name, attr_values in all_attr_values(tree):
         for check_node, check_attr_name, check_attr_values in all_attr_values(tree):
             if node != check_node and len(attr_values) > 2 and len(check_attr_values) > 2:
@@ -143,7 +141,7 @@ if __name__ == '__main__':
     args = make_arg_parser().parse_args()
     for path in args.path:
         print(path)
-        tree, attr_value_index = parse_file_at_path(path)
+        tree = parse_file_at_path(path)
         if args.find_foreign_keys:
-            find_foreign_keys(tree, attr_value_index)
+            find_foreign_keys(tree)
         print_subtree(tree, args.line_length)
