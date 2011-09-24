@@ -2,12 +2,12 @@ import argparse
 from collections import defaultdict
 import re
 import sys
-import weakref
 from xml.sax import make_parser
 from xml.sax.handler import ContentHandler
 
 
 def stack_key_path(stack, attr_name=None):
+    """Tag.Tag.Tag/Attribute"""
     s = '.'.join([e.name for e in stack])
     if attr_name:
         s += '/' + attr_name
@@ -69,6 +69,7 @@ def parse_file_at_path(path):
 
 
 def all_attr_values(tree):
+    """Yield (node, attr_name, attr_values) for each attribute on each node"""
     stack = [tree]
     while stack:
         node = stack.pop()
@@ -89,6 +90,9 @@ def find_foreign_keys(tree):
 
 
 def values_within_line_length(values, line_length):
+    """Return a set with at least one value but with no additional values
+    causing the representation to exceed line_length
+    """
     values = values.copy()
     ex_values = {values.pop()}
 
