@@ -48,11 +48,24 @@ def parse_file_at_path(path):
 
 def print_subtree(subtree, line_length, indent=''):
     print('{0}<{1}>'.format(indent, subtree['name']))
+
     for attr, values in subtree['attributes'].items():
+        prefix = '{0}  {1} = '.format(indent, attr)
+
         ex_values = {values.pop()}
-        while values and len(repr(ex_values)) < line_length:
-            ex_values.add(values.pop())
-        print('{0}  {1} = {2}'.format(indent, attr, ex_values))
+
+        # limit line length
+        if values:
+            next_values = ex_values | {values.pop()}
+            while next_values and len(prefix) + len(repr(next_values)) < line_length:
+                ex_values = next_values
+                if values:
+                    next_values = ex_values | {values.pop()}
+                else:
+                    next_values = None
+
+        print('{0}{1}'.format(prefix, ex_values))
+
     new_indent = indent + '  '
     for child in subtree['children'].values():
         print_subtree(child, line_length, new_indent)
@@ -63,7 +76,10 @@ def make_arg_parser():
                                      ' a basic outline of the schema of an XML'
                                      ' document')
     parser.add_argument('path', type=str, nargs='+', help='Path to an XML document')
-    parser.add_argument('--line-length', type=int, dest='line_length', default=40,
+    parser.add_argument('--find-foreign-keys', type=bool,
+                        help='Attempt to determine relationships between'
+                        ' attribute values')
+    parser.add_argument('--line-length', type=int, dest='line_length', default=80,
                         help='Maximum number of characters in a line (use more'
                         ' to see more attribute examples)')
     return parser
