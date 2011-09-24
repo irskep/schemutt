@@ -1,4 +1,5 @@
 import argparse
+from collections import defaultdict
 from pprint import pprint
 import re
 import sys
@@ -9,20 +10,17 @@ from xml.sax.handler import ContentHandler
 class Element:
     def __init__(self, name):
         self.name = name
-        self.attributes = {}
+        self.attributes = {'refer_to': {}, 'values': defaultdict(set)}
         self.children = {}
+
+    def add_attr(self, attr_name, attr_value):
+        self.attributes['values'][attr_name].add(attr_value)
 
 
 class GenericHandler(ContentHandler):
 
     def __init__(self):
-        # {
-        #  'name': blah,
-        #  'attributes': {'name': blah, 'values': set()},
-        #  'children': {name1: {recurse}, name2... },
-        # }
         self.tree = None
-        # [dict, dict dict...]
         self.stack = []
 
     def startElement(self, name, attributes):
@@ -35,8 +33,7 @@ class GenericHandler(ContentHandler):
             self.tree = my_elem
 
         for attr in attributes.getNames():
-            my_elem.attributes.setdefault(attr, set())
-            my_elem.attributes[attr].add(attributes.getValue(attr))
+            my_elem.add_attr(attr, attributes.getValue(attr))
 
         self.stack.append(my_elem)
 
@@ -55,7 +52,7 @@ def parse_file_at_path(path):
 def print_subtree(subtree, line_length, indent=''):
     print('{0}<{1}>'.format(indent, subtree.name))
 
-    for attr, values in subtree.attributes.items():
+    for attr, values in subtree.attributes['values'].items():
         prefix = '{0}  {1} = '.format(indent, attr)
 
         ex_values = {values.pop()}
