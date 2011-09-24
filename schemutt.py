@@ -6,7 +6,8 @@ from xml.sax import make_parser
 from xml.sax.handler import ContentHandler
 
 
-SINGLE_VALUE_REGEX = re.compile(r'name|(.*)id', flags=re.IGNORECASE)
+# Maximum length of the attribute example string. Go longer for more examples.
+MAX_ATTR_DISPLAY_SIZE = 40
 
 
 class GenericHandler(ContentHandler):
@@ -52,11 +53,9 @@ def parse_file_at_path(path):
 def print_subtree(subtree, indent=''):
     print('{0}<{1}>'.format(indent, subtree['name']))
     for attr, values in subtree['attributes'].items():
-        if SINGLE_VALUE_REGEX.match(attr):
-            num_items = 1
-        else:
-            num_items = 4
-        ex_values = {v for v, i in zip(values, range(num_items))}
+        ex_values = {values.pop()}
+        while values and len(repr(ex_values)) < 40:
+            ex_values.add(values.pop())
         print('{0}  {1} = {2}'.format(indent, attr, ex_values))
     new_indent = indent + '  '
     for child in subtree['children'].values():
