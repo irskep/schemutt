@@ -6,6 +6,13 @@ from xml.sax import make_parser
 from xml.sax.handler import ContentHandler
 
 
+class Element:
+    def __init__(self, name):
+        self.name = name
+        self.attributes = {}
+        self.children = {}
+
+
 class GenericHandler(ContentHandler):
 
     def __init__(self):
@@ -20,19 +27,18 @@ class GenericHandler(ContentHandler):
 
     def startElement(self, name, attributes):
         if self.stack:
-            last_dict = self.stack[-1]
-            last_dict['children'].setdefault(name, {'name': name,
-                                                    'attributes': {},
-                                                    'children': {}})
-            my_dict = last_dict['children'][name]
+            last_elem = self.stack[-1]
+            last_elem.children.setdefault(name, Element(name))
+            my_elem = last_elem.children[name]
         else:
-            my_dict = {'name': name, 'attributes': {}, 'children': {}}
-            self.tree = my_dict
-        for attr in attributes.getNames():
-            my_dict['attributes'].setdefault(attr, set())
-            my_dict['attributes'][attr].add(attributes.getValue(attr))
+            my_elem = Element(name)
+            self.tree = my_elem
 
-        self.stack.append(my_dict)
+        for attr in attributes.getNames():
+            my_elem.attributes.setdefault(attr, set())
+            my_elem.attributes[attr].add(attributes.getValue(attr))
+
+        self.stack.append(my_elem)
 
     def endElement(self, name):
         self.stack.pop()
@@ -47,9 +53,9 @@ def parse_file_at_path(path):
 
 
 def print_subtree(subtree, line_length, indent=''):
-    print('{0}<{1}>'.format(indent, subtree['name']))
+    print('{0}<{1}>'.format(indent, subtree.name))
 
-    for attr, values in subtree['attributes'].items():
+    for attr, values in subtree.attributes.items():
         prefix = '{0}  {1} = '.format(indent, attr)
 
         ex_values = {values.pop()}
@@ -67,7 +73,7 @@ def print_subtree(subtree, line_length, indent=''):
         print('{0}{1}'.format(prefix, ex_values))
 
     new_indent = indent + '  '
-    for child in subtree['children'].values():
+    for child in subtree.children.values():
         print_subtree(child, line_length, new_indent)
 
 
