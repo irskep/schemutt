@@ -6,6 +6,12 @@ undocumented APIs.
 
 This script will run on Python 2.7 and 3.2.
 
+    python setup.py install
+
+or
+
+    python3 setup.py install
+
 Output Format
 -------------
 
