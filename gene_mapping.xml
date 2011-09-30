@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<genomesAddedManually>
+    <genome organismgroupid="06315f1e-6326-4b8c-9fea-0a4efd7108b9" numberofchromosomes="24">
+        <chromosome number="1" length="247249719" centromerlocation="124300000">
+            <gene name="PKLR, PK1, PKL, PKR, PKRL, RPK" location="147850000" cytogeneticAddress="1q21" genericprocess="6383573f-b085-4755-9163-b5da12bf0bce"/>
+            <gene name="ENO1, ENO1L1, MPB1, NNE, PPH" location="11600000" cytogeneticAddress="1p36.2" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+        </chromosome>
+        <chromosome number="10" length="135374737" centromerlocation="40300000">
+            <gene name="PGAM1, PGAM-B, PGAMA" location="117000000" cytogeneticAddress="10q25.3" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+        </chromosome>
+        <chromosome number="11" length="134452384" centromerlocation="52900000">
+            <gene name="DLAT, DLTA, PDC-E2, PDCE2" location="111400000" cytogeneticAddress="11q23.1" genericprocess="f49dda21-086d-4477-af34-a212b3592672"/>
+            <gene name="LDHA, GSD11, LDH1, LDHM" location="6750000" cytogeneticAddress="11p15.4" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+            <gene name="LDHAL6A, LDH6A, MGC23940" location="18850000" cytogeneticAddress="11p15.1" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+            <gene name="LDHC, CT32, LDH3, LDHX, MGC111073" location="18850000" cytogeneticAddress="11p15.1" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+        </chromosome>
+        <chromosome number="12" length="132349534" centromerlocation="35400000">
+            <gene name="ENO2, NSE" location="7400000" cytogeneticAddress="12p13" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+            <gene name="GAPDH, G3PD, GAPD, MGC88685" location="7400000" cytogeneticAddress="12p13" genericprocess="96ccbf6b-3b4a-4fa3-891e-9bf3374b029a"/>
+            <gene name="LDHB, LDH-H, TRG-5" location="23100000" cytogeneticAddress="12p12.2-p12.1" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+            <gene name="TPI1, MGC88108, TPI" location="7400000" cytogeneticAddress="12p13" genericprocess="d1a15284-e6d8-4243-a0b1-7e0c0a3550d9"/>
+        </chromosome>
+        <chromosome number="13" length="114142980" centromerlocation="16000000"/>
+        <chromosome number="14" length="106368585" centromerlocation="15600000">
+            <gene name="PCK2, PEPCK, PEPCK-M, PEPCK2" location="21350000" cytogeneticAddress="14q11.2" genericprocess="de7392a4-5f0f-49da-8d9a-124b869160d7"/>
+        </chromosome>
+        <chromosome number="15" length="100338915" centromerlocation="17000000">
+            <gene name="PKM2, CTHBP, MGC3932, OIP3, PK3, PKM, TCB, THBP1" location="60550000" cytogeneticAddress="15q22" genericprocess="6383573f-b085-4755-9163-b5da12bf0bce"/>
+            <gene name="LDHAL6B, LDH6B, LDHAL6, LDHL" location="59300000" cytogeneticAddress="15q22.2" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+        </chromosome>
+        <chromosome number="16" length="88827254" centromerlocation="38200000"/>
+        <chromosome number="17" length="78774742" centromerlocation="22200000">
+            <gene name="ENO3, GSD13, MSE" location="11100000" cytogeneticAddress="17pter-p11" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+        </chromosome>
+        <chromosome number="18" length="76117153" centromerlocation="16100000"/>
+        <chromosome number="19" length="63811651" centromerlocation="28500000">
+            <gene name="GAPDHS, GAPD2, GAPDH-2, GAPDS, HSD-35" location="41650000" cytogeneticAddress="19q13.12" genericprocess="96ccbf6b-3b4a-4fa3-891e-9bf3374b029a"/>
+        </chromosome>
+        <chromosome number="2" length="242951149" centromerlocation="93300000">
+            <gene name="GALM, IBD1" location="40000000" cytogeneticAddress="2p22.1" genericprocess="4e50fb9d-a1a6-44f6-8ead-dd6280056667"/>
+        </chromosome>
+        <chromosome number="20" length="62435964" centromerlocation="27100000">
+            <gene name="ACSS2, ACAS2, ACECS, ACS, ACSA, DKFZp762G026, dJ1161H23.1" location="32700000" cytogeneticAddress="20q11.22" genericprocess="42d94cce-9d6c-4eda-924d-c359f85aa4fb"/>
+            <gene name="PCK1, MGC22652, PEPCK-C, PEPCK1, PEPCKC" location="55150000" cytogeneticAddress="20q13.31" genericprocess="de7392a4-5f0f-49da-8d9a-124b869160d7"/>
+            <gene name="ACSS1, ACAS2L, AceCS2L, FLJ45659, MGC33843" location="21750000" cytogeneticAddress="20p11.23-p11.21" genericprocess="42d94cce-9d6c-4eda-924d-c359f85aa4fb"/>
+        </chromosome>
+        <chromosome number="21" length="46944323" centromerlocation="12300000"/>
+        <chromosome number="22" length="49691432" centromerlocation="11800000"/>
+        <chromosome number="3" length="199501827" centromerlocation="91700000"/>
+        <chromosome number="4" length="191273063" centromerlocation="50700000"/>
+        <chromosome number="5" length="180857866" centromerlocation="47700000"/>
+        <chromosome number="6" length="170899992" centromerlocation="60500000">
+            <gene name="PGK2, PGKB, PGKPS, dJ417L20.2" location="48150000" cytogeneticAddress="6p12.3" genericprocess="9c0195a9-9e68-40b6-8d35-67bd6489a79d"/>
+        </chromosome>
+        <chromosome number="7" length="158821424" centromerlocation="59100000">
+            <gene name="PGAM2, GSD10, MGC88743, PGAM-M, PGAMM" location="48600000" cytogeneticAddress="7p13-p12" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+            <gene name="BPGM" location="125000000" cytogeneticAddress="7q31-q34" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+            <gene name="BPGM" location="125000000" cytogeneticAddress="7q31-q34" genericprocess="3fc60452-0b6e-4e8c-87d4-9700916c67d4"/>
+            <gene name="BPGM" location="125000000" cytogeneticAddress="7q31-q34" genericprocess="68ec0199-1823-4cc8-a235-485acbb1e932"/>
+        </chromosome>
+        <chromosome number="8" length="146274826" centromerlocation="45200000"/>
+        <chromosome number="9" length="140273252" centromerlocation="51800000"/>
+        <chromosome number="X" length="154913754" centromerlocation="59500000">
+            <gene name="PGAM4, PGAM-B, PGAM1, PGAM3, dJ1000K24.1" location="71850000" cytogeneticAddress="Xq13" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+            <gene name="PGK1, MGC117307, MGC142128, MGC8947, MIG10, PGKA" location="71850000" cytogeneticAddress="Xq13" genericprocess="9c0195a9-9e68-40b6-8d35-67bd6489a79d"/>
+        </chromosome>
+        <chromosome number="Y" length="57772954" centromerlocation="11300000"/>
+    </genome>
+    <genome organismgroupid="06745f55-2b06-4f12-bc98-41cfccfabbd0" numberofchromosomes="21">
+        <chromosome number="1" length="197069963" centromerlocation=""/>
+        <chromosome number="10" length="129959149" centromerlocation=""/>
+        <chromosome number="11" length="121798633" centromerlocation="">
+            <gene name="Pgam2" location="6508324" cytogeneticAddress="11 A1" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+            <gene name="Eno3, Eno-3" location="72288882" cytogeneticAddress="11 B4" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+        </chromosome>
+        <chromosome number="12" length="120463160" centromerlocation=""/>
+        <chromosome number="13" length="120614379" centromerlocation=""/>
+        <chromosome number="14" length="123978871" centromerlocation="">
+            <gene name="Pck2, 1810010O14Rik, 9130022B02Rik" location="47359927" cytogeneticAddress="14 C1" genericprocess="de7392a4-5f0f-49da-8d9a-124b869160d7"/>
+        </chromosome>
+        <chromosome number="15" length="103492578" centromerlocation=""/>
+        <chromosome number="16" length="98252460" centromerlocation=""/>
+        <chromosome number="17" length="95177421" centromerlocation="">
+            <gene name="Pgk2, Pgk-2, Tcp-2" location="40821507" cytogeneticAddress="17 B2" genericprocess="9c0195a9-9e68-40b6-8d35-67bd6489a79d"/>
+            <gene name="Galm, A530057M15Rik, AU015645, AU020959" location="80769828" cytogeneticAddress="17 E3" genericprocess="4e50fb9d-a1a6-44f6-8ead-dd6280056667"/>
+            <gene name="Ldhal6b, 4933402O15Rik, AI326310, LDHL, Ldhal" location="6985499" cytogeneticAddress="17 A1" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+        </chromosome>
+        <chromosome number="18" length="90736838" centromerlocation="">
+            <gene name="Gm5506, EG433182, Eno1" location="47689593" cytogeneticAddress="18 C" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+        </chromosome>
+        <chromosome number="19" length="61321191" centromerlocation="">
+            <gene name="Pgam1, 2310050F24Rik, MGC102422, MGC118049, Pgam-1" location="42843612" cytogeneticAddress="19 C3" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+            <gene name="Gm5514, EG433229" location="21117230" cytogeneticAddress="19 B" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+        </chromosome>
+        <chromosome number="2" length="181976763" centromerlocation="">
+            <gene name="Acss2, 1110017C11Rik, ACAS, Acas1, Acas2, AceCS1, Acs1" location="161105715" cytogeneticAddress="2 H2" genericprocess="42d94cce-9d6c-4eda-924d-c359f85aa4fb"/>
+            <gene name="Acss1, 1110032O15Rik, AI788978, Acas2, Acas2l, AceCS2" location="150083927" cytogeneticAddress="2 G3" genericprocess="42d94cce-9d6c-4eda-924d-c359f85aa4fb"/>
+            <gene name="Pck1, AI265463, PEPCK, Pck-1" location="115142513" cytogeneticAddress="2 C1-qter" genericprocess="de7392a4-5f0f-49da-8d9a-124b869160d7"/>
+        </chromosome>
+        <chromosome number="3" length="159872113" centromerlocation="">
+            <gene name="Pklr, Pk-1, Pk1, R-PK" location="88465817" cytogeneticAddress="3 F1" genericprocess="6383573f-b085-4755-9163-b5da12bf0bce"/>
+        </chromosome>
+        <chromosome number="4" length="155029702" centromerlocation="">
+            <gene name="Eno1, 0610008I15, AL022784, Eno-1, MBP-1, MGC103111, MGC107267" location="150749739" cytogeneticAddress="4 E2" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+        </chromosome>
+        <chromosome number="5" length="152003064" centromerlocation=""/>
+        <chromosome number="6" length="149525686" centromerlocation="">
+            <gene name="100045967" location="0" cytogeneticAddress="6" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+            <gene name="Bpgm, AI323730, AL022789, C86192" location="37870067" cytogeneticAddress="6 B1" genericprocess="3fc60452-0b6e-4e8c-87d4-9700916c67d4"/>
+            <gene name="Bpgm, AI323730, AL022789, C86192" location="37870067" cytogeneticAddress="6 B1" genericprocess="6754fa25-fbdd-406a-9214-7b28654a65c9"/>
+            <gene name="Bpgm, AI323730, AL022789, C86192" location="37870067" cytogeneticAddress="6 B1" genericprocess="68ec0199-1823-4cc8-a235-485acbb1e932"/>
+            <gene name="Ldhb, AI790582, H-Ldh, Ldh-2, Ldh2" location="140974379" cytogeneticAddress="6 G2" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+            <gene name="Tpi1, AI255506, Tpi, Tpi-1" location="123871768" cytogeneticAddress="6 F2" genericprocess="d1a15284-e6d8-4243-a0b1-7e0c0a3550d9"/>
+            <gene name="Eno2, AI837106, D6Ertd375e, Eno-2, NSE" location="123871768" cytogeneticAddress="6 F2" genericprocess="ba772538-9041-4c24-b5ad-5c50f818fadb"/>
+            <gene name="Gapdh, Gapd, MGC102544, MGC102546, MGC103190, MGC103191, MGC105239" location="123871768" cytogeneticAddress="6 F2" genericprocess="96ccbf6b-3b4a-4fa3-891e-9bf3374b029a"/>
+        </chromosome>
+        <chromosome number="7" length="145134095" centromerlocation="">
+            <gene name="Ldha, Ldh1, Ldhm, l7R2" location="50822217" cytogeneticAddress="7 B4" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+            <gene name="Ldhc, Ldh-3, Ldh-x, Ldh3, Ldhc4" location="50822217" cytogeneticAddress="7 B4" genericprocess="a2a99553-05a4-4d73-ba78-c0109ab688fa"/>
+            <gene name="Gapdhs, Gapd-s, Gapds" location="31353009" cytogeneticAddress="7 B1" genericprocess="96ccbf6b-3b4a-4fa3-891e-9bf3374b029a"/>
+        </chromosome>
+        <chromosome number="8" length="132085099" centromerlocation=""/>
+        <chromosome number="9" length="124000670" centromerlocation="">
+            <gene name="100048117" location="0" cytogeneticAddress="9" genericprocess="96ccbf6b-3b4a-4fa3-891e-9bf3374b029a"/>
+            <gene name="Dlat, 6332404G05Rik, DLTA, PDC-E2" location="50433107" cytogeneticAddress="9 A5.3" genericprocess="f49dda21-086d-4477-af34-a212b3592672"/>
+            <gene name="Pkm2, AA414905, AL024370, AL024424, Pk-2, Pk-3, Pk3" location="58761510" cytogeneticAddress="9 B" genericprocess="6383573f-b085-4755-9163-b5da12bf0bce"/>
+        </chromosome>
+        <chromosome number="X" length="165556470" centromerlocation="">
+            <gene name="Pgk1, MGC118097, Pgk-1" location="93036055" cytogeneticAddress="X C-D" genericprocess="9c0195a9-9e68-40b6-8d35-67bd6489a79d"/>
+        </chromosome>
+        <chromosome number="Y" length="2729405" centromerlocation="">
+            <gene name="100042025" location="0" cytogeneticAddress="Y" genericprocess="96ccbf6b-3b4a-4fa3-891e-9bf3374b029a"/>
+        </chromosome>
+    </genome>
+</genomesAddedManually>
