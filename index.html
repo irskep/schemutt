@@ -1,0 +1,161 @@
+<htmL>
+    <head>
+        <title>Schemutt</title>
+        <link rel="stylesheet" type="text/css" href="blueprintcss/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="blueprintcss/grid.css"/>
+        <style type="text/css">
+            .hll { background-color: #ffffcc }
+.c { color: #8f5902; font-style: italic } /* Comment */
+.err { color: #a40000; border: 1px solid #ef2929 } /* Error */
+.g { color: #000000 } /* Generic */
+.k { color: #204a87; font-weight: bold } /* Keyword */
+.l { color: #000000 } /* Literal */
+.n { color: #000000 } /* Name */
+.o { color: #ce5c00; font-weight: bold } /* Operator */
+.x { color: #000000 } /* Other */
+.p { color: #000000; font-weight: bold } /* Punctuation */
+.cm { color: #8f5902; font-style: italic } /* Comment.Multiline */
+.cp { color: #8f5902; font-style: italic } /* Comment.Preproc */
+.c1 { color: #8f5902; font-style: italic } /* Comment.Single */
+.cs { color: #8f5902; font-style: italic } /* Comment.Special */
+.gd { color: #a40000 } /* Generic.Deleted */
+.ge { color: #000000; font-style: italic } /* Generic.Emph */
+.gr { color: #ef2929 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.gi { color: #00A000 } /* Generic.Inserted */
+.go { color: #000000; font-style: italic } /* Generic.Output */
+.gp { color: #8f5902 } /* Generic.Prompt */
+.gs { color: #000000; font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #a40000; font-weight: bold } /* Generic.Traceback */
+.kc { color: #204a87; font-weight: bold } /* Keyword.Constant */
+.kd { color: #204a87; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #204a87; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #204a87; font-weight: bold } /* Keyword.Pseudo */
+.kr { color: #204a87; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #204a87; font-weight: bold } /* Keyword.Type */
+.ld { color: #000000 } /* Literal.Date */
+.m { color: #0000cf; font-weight: bold } /* Literal.Number */
+.s { color: #4e9a06 } /* Literal.String */
+.na { color: #c4a000 } /* Name.Attribute */
+.nb { color: #204a87 } /* Name.Builtin */
+.nc { color: #000000 } /* Name.Class */
+.no { color: #000000 } /* Name.Constant */
+.nd { color: #5c35cc; font-weight: bold } /* Name.Decorator */
+.ni { color: #ce5c00 } /* Name.Entity */
+.ne { color: #cc0000; font-weight: bold } /* Name.Exception */
+.nf { color: #000000 } /* Name.Function */
+.nl { color: #f57900 } /* Name.Label */
+.nn { color: #000000 } /* Name.Namespace */
+.nx { color: #000000 } /* Name.Other */
+.py { color: #000000 } /* Name.Property */
+.nt { color: #204a87; font-weight: bold } /* Name.Tag */
+.nv { color: #000000 } /* Name.Variable */
+.ow { color: #204a87; font-weight: bold } /* Operator.Word */
+.w { color: #f8f8f8; text-decoration: underline } /* Text.Whitespace */
+.mf { color: #0000cf; font-weight: bold } /* Literal.Number.Float */
+.mh { color: #0000cf; font-weight: bold } /* Literal.Number.Hex */
+.mi { color: #0000cf; font-weight: bold } /* Literal.Number.Integer */
+.mo { color: #0000cf; font-weight: bold } /* Literal.Number.Oct */
+.sb { color: #4e9a06 } /* Literal.String.Backtick */
+.sc { color: #4e9a06 } /* Literal.String.Char */
+.sd { color: #8f5902; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #4e9a06 } /* Literal.String.Double */
+.se { color: #4e9a06 } /* Literal.String.Escape */
+.sh { color: #4e9a06 } /* Literal.String.Heredoc */
+.si { color: #4e9a06 } /* Literal.String.Interpol */
+.sx { color: #4e9a06 } /* Literal.String.Other */
+.sr { color: #4e9a06 } /* Literal.String.Regex */
+.s1 { color: #4e9a06 } /* Literal.String.Single */
+.ss { color: #4e9a06 } /* Literal.String.Symbol */
+.bp { color: #3465a4 } /* Name.Builtin.Pseudo */
+.vc { color: #000000 } /* Name.Variable.Class */
+.vg { color: #000000 } /* Name.Variable.Global */
+.vi { color: #000000 } /* Name.Variable.Instance */
+.il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */ 
+
+            pre {
+                background-color: #eaeaff;
+            }
+
+            pre.logo {
+                background-color: white;
+                background-color: rgba(0,0,0,0);
+                font-size: 24px;
+                line-height: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="main">
+            <div class="span-24 last">
+                <h1>Schemutt</h1>
+                <h2>An XML Schema Figure-Outer</h2>
+            </div>
+
+            <div class="span-24 last">
+                <p>Imagine that you are asked to parse a file like this without any documentation:</p>
+
+                <div class="code">
+                    <div class="info">simple_example.xml (<a href="simple_example.xml">full version</a>)</div>
+                    <div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="nt">&lt;PathwayLayout&gt;</span>
+    <span class="nt">&lt;Nodes&gt;</span>
+        <span class="nt">&lt;NodeLayout</span> <span class="na">ID=</span><span class="s">&quot;11a33417-5373-4d81-a3f3-3a6bc0f35f2f&quot;</span> <span class="na">NeighboringProcessId=</span><span class="s">&quot;null&quot;</span> 
+            <span class="na">X=</span><span class="s">&quot;1594.919744680851&quot;</span> <span class="na">Y=</span><span class="s">&quot;1174.9773191489362&quot;</span> <span class="na">cofactor=</span><span class="s">&quot; &quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;NodeLayout</span> <span class="na">ID=</span><span class="s">&quot;e337f11d-9af6-4c98-b0f8-f1c3aa1d8e75&quot;</span> 
+            <span class="na">NeighboringProcessId=</span><span class="s">&quot;3fc37f61-cb00-4072-a004-9446f8cab009&quot;</span> 
+            <span class="na">X=</span><span class="s">&quot;1325.3975829787232&quot;</span> <span class="na">Y=</span><span class="s">&quot;1767.7851574468082&quot;</span> <span class="na">cofactor=</span><span class="s">&quot; &quot;</span><span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/Nodes&gt;</span>
+    <span class="nt">&lt;Edges&gt;</span>
+        <span class="nt">&lt;EdgeLayout</span> <span class="na">SourceCofactor=</span><span class="s">&quot; &quot;</span> <span class="na">SourceID=</span><span class="s">&quot;5e8d5a2c-9e10-42a9-b780-31863310e921&quot;</span> 
+            <span class="na">SourceNeighboringProcessId=</span><span class="s">&quot;760e7757-4808-4ee7-8892-0302539e319c&quot;</span> 
+            <span class="na">TargetCofactor=</span><span class="s">&quot; &quot;</span> <span class="na">TargetID=</span><span class="s">&quot;760e7757-4808-4ee7-8892-0302539e319c&quot;</span> 
+            <span class="na">TargetNeighboringProcessId=</span><span class="s">&quot;null&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;BendPoint</span> <span class="na">X=</span><span class="s">&quot;1356.8323304051614&quot;</span> <span class="na">Y=</span><span class="s">&quot;1080.210644335484&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;BendPoint</span> <span class="na">X=</span><span class="s">&quot;1379.7704548254878&quot;</span> <span class="na">Y=</span><span class="s">&quot;1080.3295905311406&quot;</span><span class="nt">/&gt;</span>
+            ...
+        <span class="nt">&lt;/EdgeLayout&gt;</span>
+        <span class="nt">&lt;EdgeLayout</span> <span class="na">SourceCofactor=</span><span class="s">&quot; &quot;</span> <span class="na">SourceID=</span><span class="s">&quot;760e7757-4808-4ee7-8892-0302539e319c&quot;</span> 
+            <span class="na">SourceNeighboringProcessId=</span><span class="s">&quot;null&quot;</span> 
+            <span class="na">TargetCofactor=</span><span class="s">&quot; &quot;</span> <span class="na">TargetID=</span><span class="s">&quot;3152204b-2844-4dc1-a227-a5b6550b1804&quot;</span> 
+            <span class="na">TargetNeighboringProcessId=</span><span class="s">&quot;8c8b1006-b06e-4c59-9b1a-84df2c6d0faf&quot;</span><span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/Edges&gt;</span>
+<span class="nt">&lt;/PathwayLayout&gt;</span>
+</pre></div>
+
+                </div>
+
+                <p>While it might be feasible to go through the file by hand and
+                figure out the ranges of values of each field and how they
+                correlate, Schemutt can take away some of the pain:</p>
+
+                <div class="highlight"><pre>&gt; schemutt simple_example.xml
+simple_example.xml
+&lt;PathwayLayout&gt;
+  &lt;Nodes&gt;
+    &lt;NodeLayout&gt;
+      <span class="nv">Y</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;879.5694734042553&#39;</span>, <span class="s1">&#39;876.2212021276594&#39;</span>, <span class="s1">&#39;1079.5484000000001&#39;</span><span class="o">}</span>
+      <span class="nv">X</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;221.26220119148942&#39;</span>, <span class="s1">&#39;1612.846808510638&#39;</span>, <span class="s1">&#39;472.4837841702128&#39;</span><span class="o">}</span>
+      <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;6054abb3-dc31-43a0-9bd6-b9dda7af77e5&#39;</span><span class="o">}</span>
+      <span class="nv">NeighboringProcessId</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;14fd303b-b106-4e7a-b51a-6d2f9b3d2805&#39;</span><span class="o">}</span>
+      <span class="nv">cofactor</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;i&#39;</span>, <span class="s1">&#39; &#39;</span>, <span class="s1">&#39;c&#39;</span><span class="o">}</span>
+  &lt;Edges&gt;
+    &lt;EdgeLayout&gt;
+      <span class="nv">SourceID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;6054abb3-dc31-43a0-9bd6-b9dda7af77e5&#39;</span><span class="o">}</span>
+      <span class="nv">TargetCofactor</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39; &#39;</span><span class="o">}</span>
+      <span class="nv">TargetID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;c03a2447-fff2-4ef8-896c-65fd36be0ab8&#39;</span><span class="o">}</span>
+      <span class="nv">SourceNeighboringProcessId</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;8c8b1006-b06e-4c59-9b1a-84df2c6d0faf&#39;</span><span class="o">}</span>
+      <span class="nv">TargetNeighboringProcessId</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;14fd303b-b106-4e7a-b51a-6d2f9b3d2805&#39;</span><span class="o">}</span>
+      <span class="nv">SourceCofactor</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;i&#39;</span>, <span class="s1">&#39; &#39;</span>, <span class="s1">&#39;c&#39;</span><span class="o">}</span>
+      &lt;BendPoint&gt;
+        <span class="nv">Y</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;1080.210644335484&#39;</span>, <span class="s1">&#39;787.2429629629629&#39;</span>, <span class="s1">&#39;683.8948148148148&#39;</span><span class="o">}</span>
+        <span class="nv">X</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;1379.7704548254878&#39;</span>, <span class="s1">&#39;1378.709530510858&#39;</span>, <span class="s1">&#39;1574.5530864197533&#39;</span><span class="o">}</span>
+</pre></div>
+
+            </div>
+        </div>
+    </body>
+</htmL>

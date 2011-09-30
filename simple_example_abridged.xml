@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PathwayLayout>
+    <Nodes>
+        <NodeLayout ID="11a33417-5373-4d81-a3f3-3a6bc0f35f2f" NeighboringProcessId="null" 
+            X="1594.919744680851" Y="1174.9773191489362" cofactor=" "/>
+        <NodeLayout ID="e337f11d-9af6-4c98-b0f8-f1c3aa1d8e75" 
+            NeighboringProcessId="3fc37f61-cb00-4072-a004-9446f8cab009" 
+            X="1325.3975829787232" Y="1767.7851574468082" cofactor=" "/>
+        ...
+    </Nodes>
+    <Edges>
+        <EdgeLayout SourceCofactor=" " SourceID="5e8d5a2c-9e10-42a9-b780-31863310e921" 
+            SourceNeighboringProcessId="760e7757-4808-4ee7-8892-0302539e319c" 
+            TargetCofactor=" " TargetID="760e7757-4808-4ee7-8892-0302539e319c" 
+            TargetNeighboringProcessId="null">
+            <BendPoint X="1356.8323304051614" Y="1080.210644335484"/>
+            <BendPoint X="1379.7704548254878" Y="1080.3295905311406"/>
+            ...
+        </EdgeLayout>
+        <EdgeLayout SourceCofactor=" " SourceID="760e7757-4808-4ee7-8892-0302539e319c" 
+            SourceNeighboringProcessId="null" 
+            TargetCofactor=" " TargetID="3152204b-2844-4dc1-a227-a5b6550b1804" 
+            TargetNeighboringProcessId="8c8b1006-b06e-4c59-9b1a-84df2c6d0faf"/>
+        ...
+    </Edges>
+</PathwayLayout>

@@ -1,0 +1,44 @@
+<htmL>
+    <head>
+        <title>Schemutt</title>
+        <link rel="stylesheet" type="text/css" href="blueprintcss/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="blueprintcss/grid.css"/>
+        <style type="text/css">
+            {{ pygments_css }} 
+
+            pre {
+                background-color: #eaeaff;
+            }
+
+            pre.logo {
+                background-color: white;
+                background-color: rgba(0,0,0,0);
+                font-size: 24px;
+                line-height: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="main">
+            <div class="span-24 last">
+                <h1>Schemutt</h1>
+                <h2>An XML Schema Figure-Outer</h2>
+            </div>
+
+            <div class="span-24 last">
+                <p>Imagine that you are asked to parse a file like this without any documentation:</p>
+
+                <div class="code">
+                    <div class="info">simple_example.xml (<a href="simple_example.xml">full version</a>)</div>
+                    {{ 'simple_example_abridged.xml'|code }}
+                </div>
+
+                <p>While it might be feasible to go through the file by hand and
+                figure out the ranges of values of each field and how they
+                correlate, Schemutt can take away some of the pain:</p>
+
+                {{ "simple_example_out.sh"|code }}
+            </div>
+        </div>
+    </body>
+</htmL>
