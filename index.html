@@ -1,6 +1,8 @@
 <htmL>
     <head>
         <title>Schemutt</title>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="blueprintcss/typography.css"/>
         <link rel="stylesheet" type="text/css" href="blueprintcss/grid.css"/>
         <style type="text/css">
@@ -74,30 +76,72 @@
 .vi { color: #000000 } /* Name.Variable.Instance */
 .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */ 
 
-            pre {
-                background-color: #eaeaff;
-            }
-
             pre.logo {
                 background-color: white;
                 background-color: rgba(0,0,0,0);
                 font-size: 24px;
                 line-height: 1em;
             }
+
+            pre, code, tt {
+                font: 14px 'Inconsolata', 'andale mono', 'lucida console', monospace;
+            }
+
+            h1, h2 {
+                font-family: 'Chewy', cursive;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            pre {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0.2em;
+                background-color: #fafafa;
+            }
+
+            .code .info {
+                background-color: #fafafa;
+                padding: 0.2em;
+                border: 1px solid #aaa;
+                margin-bottom: 1em;
+            }
+
+            body {
+                background-image: url(bg.png);
+            }
+
+            #main {
+                background-color: white;
+            }
         </style>
     </head>
     <body>
-        <div class="container" id="main">
-            <div class="span-24 last">
-                <h1>Schemutt</h1>
-                <h2>An XML Schema Figure-Outer</h2>
-            </div>
+        <div class="container">
+            <div class="span-2">&nbsp;</div>
+            <div class="span-18 prepend-1 append-1 last" id="main">
+                <div class="span-9">
+                    <h1>Schemutt</h1>
+                    <h2>An XML Schema Assistant</h2>
+                </div>
+                <div class="span-9 last" style="text-align: right; margin-top: 3em;">
+                    <p>by <a href="http://www.steveasleep.com/">Steve Johnson</a></p>
+                    <p><a href="http://www.github.com/irskep/schemutt">Fork me on Github</a></p>
+                </div>
 
-            <div class="span-24 last">
+                <hr/>
+
+                <p>Schemutt parses XML documents and displays a high-level view of their structure.</p>
+
                 <p>Imagine that you are asked to parse a file like this without any documentation:</p>
 
                 <div class="code">
-                    <div class="info">simple_example.xml (<a href="simple_example.xml">full version</a>)</div>
                     <div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
 <span class="nt">&lt;PathwayLayout&gt;</span>
     <span class="nt">&lt;Nodes&gt;</span>
@@ -126,6 +170,7 @@
 <span class="nt">&lt;/PathwayLayout&gt;</span>
 </pre></div>
 
+                    <div class="info">simple_example.xml (<a href="simple_example.xml">full version</a>)</div>
                 </div>
 
                 <p>While it might be feasible to go through the file by hand and
@@ -155,7 +200,132 @@ simple_example.xml
         <span class="nv">X</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;1379.7704548254878&#39;</span>, <span class="s1">&#39;1378.709530510858&#39;</span>, <span class="s1">&#39;1574.5530864197533&#39;</span><span class="o">}</span>
 </pre></div>
 
+
+                <br/>
+
+                <p>You can easily see how the tags are nested, what their
+                attributes are called, and what their attributes' typical values
+                are.</p>
+
+                <p>Schemutt can be instructed to correlate the values of the
+                attributes with the <tt>--find-foreign-keys</tt> flag, which will identify
+                attributes that share more than 10% of their values:</p>
+
+                <div class="highlight"><pre>&gt; schemutt --find-foreign-keys simple_example.xml
+simple_example.xml
+&lt;PathwayLayout&gt;
+  &lt;Nodes&gt;
+    &lt;NodeLayout&gt;
+      <span class="nv">Y</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;879.5694734042553&#39;</span>, <span class="s1">&#39;876.2212021276594&#39;</span>, <span class="s1">&#39;1079.5484000000001&#39;</span><span class="o">}</span>
+      <span class="nv">X</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;221.26220119148942&#39;</span>, <span class="s1">&#39;1612.846808510638&#39;</span>, <span class="s1">&#39;472.4837841702128&#39;</span><span class="o">}</span>
+      <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;6054abb3-dc31-43a0-9bd6-b9dda7af77e5&#39;</span><span class="o">}</span>
+        -&gt; PathwayLayout.Edges.EdgeLayout/SourceID <span class="o">(</span>87/94<span class="o">)</span>
+        -&gt; PathwayLayout.Edges.EdgeLayout/TargetID <span class="o">(</span>79/94<span class="o">)</span>
+        -&gt; PathwayLayout.Edges.EdgeLayout/SourceNeighboringProcessId <span class="o">(</span>27/94<span class="o">)</span>
+        -&gt; PathwayLayout.Edges.EdgeLayout/TargetNeighboringProcessId <span class="o">(</span>22/94<span class="o">)</span>
+      <span class="nv">NeighboringProcessId</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;14fd303b-b106-4e7a-b51a-6d2f9b3d2805&#39;</span><span class="o">}</span>
+                          -&gt; PathwayLayout.Edges.EdgeLayout/TargetID <span class="o">(</span>29/30<span class="o">)</span>
+                          -&gt; PathwayLayout.Edges.EdgeLayout/SourceID <span class="o">(</span>29/30<span class="o">)</span>
+                          -&gt; PathwayLayout.Edges.EdgeLayout/SourceNeighboringProcessId <span class="o">(</span>28/30<span class="o">)</span>
+                          -&gt; PathwayLayout.Edges.EdgeLayout/TargetNeighboringProcessId <span class="o">(</span>23/30<span class="o">)</span>
+      <span class="nv">cofactor</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;i&#39;</span>, <span class="s1">&#39; &#39;</span>, <span class="s1">&#39;c&#39;</span><span class="o">}</span>
+              -&gt; PathwayLayout.Edges.EdgeLayout/SourceCofactor <span class="o">(</span>3/3<span class="o">)</span>
+  &lt;Edges&gt;
+    &lt;EdgeLayout&gt;
+      <span class="nv">SourceID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;6054abb3-dc31-43a0-9bd6-b9dda7af77e5&#39;</span><span class="o">}</span>
+              -&gt; PathwayLayout.Nodes.NodeLayout/ID <span class="o">(</span>87/87<span class="o">)</span>
+              -&gt; PathwayLayout.Nodes.NodeLayout/NeighboringProcessId <span class="o">(</span>29/87<span class="o">)</span>
+      <span class="nv">TargetCofactor</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39; &#39;</span><span class="o">}</span>
+      <span class="nv">TargetID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;c03a2447-fff2-4ef8-896c-65fd36be0ab8&#39;</span><span class="o">}</span>
+              -&gt; PathwayLayout.Nodes.NodeLayout/ID <span class="o">(</span>79/79<span class="o">)</span>
+              -&gt; PathwayLayout.Nodes.NodeLayout/NeighboringProcessId <span class="o">(</span>29/79<span class="o">)</span>
+      <span class="nv">SourceNeighboringProcessId</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;8c8b1006-b06e-4c59-9b1a-84df2c6d0faf&#39;</span><span class="o">}</span>
+                                -&gt; PathwayLayout.Nodes.NodeLayout/NeighboringProcessId <span class="o">(</span>28/28<span class="o">)</span>
+                                -&gt; PathwayLayout.Nodes.NodeLayout/ID <span class="o">(</span>27/28<span class="o">)</span>
+      <span class="nv">TargetNeighboringProcessId</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;14fd303b-b106-4e7a-b51a-6d2f9b3d2805&#39;</span><span class="o">}</span>
+                                -&gt; PathwayLayout.Nodes.NodeLayout/NeighboringProcessId <span class="o">(</span>23/23<span class="o">)</span>
+                                -&gt; PathwayLayout.Nodes.NodeLayout/ID <span class="o">(</span>22/23<span class="o">)</span>
+      <span class="nv">SourceCofactor</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;i&#39;</span>, <span class="s1">&#39; &#39;</span>, <span class="s1">&#39;c&#39;</span><span class="o">}</span>
+                    -&gt; PathwayLayout.Nodes.NodeLayout/cofactor <span class="o">(</span>3/3<span class="o">)</span>
+      &lt;BendPoint&gt;
+        <span class="nv">Y</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;1080.210644335484&#39;</span>, <span class="s1">&#39;787.2429629629629&#39;</span>, <span class="s1">&#39;683.8948148148148&#39;</span><span class="o">}</span>
+        <span class="nv">X</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;1379.7704548254878&#39;</span>, <span class="s1">&#39;1378.709530510858&#39;</span>, <span class="s1">&#39;1574.5530864197533&#39;</span><span class="o">}</span>
+</pre></div>
+
+
+                <br/>
+
+                <p>Here's the result of a more complex example derived from
+                <a href="complex_example.xml">this document</a>:
+
+                <div class="highlight"><pre>&gt; schemutt --find-foreign-keys complex_example.xml
+complex_example.xml
+&lt;GraphData&gt;
+  &lt;GenericProcesses&gt;
+    &lt;GenericProcess&gt;
+      <span class="nv">GenericProcessID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;018a3f66-4e5a-4746-947a-bb22242cffd4&#39;</span><span class="o">}</span>
+      <span class="nv">Reversible</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;True&#39;</span><span class="o">}</span>
+      <span class="nv">Name</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;alpha-D-Glucose 6-phosphate phosphohydrolase&#39;</span><span class="o">}</span>
+      <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;6054abb3-dc31-43a0-9bd6-b9dda7af77e5&#39;</span><span class="o">}</span>
+        -&gt; GraphData.Pathways.Pathway.GenericProcesses.GenericProcess/ID <span class="o">(</span>52/52<span class="o">)</span>
+      &lt;Catalyzes&gt;
+        &lt;Catalyze&gt;
+          <span class="nv">OrganismGroupID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;01bea179-c89d-42c7-9add-fbe807f46fe9&#39;</span><span class="o">}</span>
+                         -&gt; GraphData.Pathways.Pathway.OrganismGroups.OrganismGroup/ID <span class="o">(</span>1412/1412<span class="o">)</span>
+          <span class="nv">GeneProductMoleculeID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;e51a5e9c-0389-4a0e-b1f5-acb1817e7a2f&#39;</span><span class="o">}</span>
+                               -&gt; GraphData.Molecules.Molecule/ID <span class="o">(</span>21/21<span class="o">)</span>
+                               -&gt; GraphData.Molecules.Molecule/EntityID <span class="o">(</span>21/21<span class="o">)</span>
+          <span class="nv">ECNumber</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;1.2.7.1&#39;</span>, <span class="s1">&#39;4.2.1.11&#39;</span>, <span class="s1">&#39;5.3.1.1&#39;</span>, <span class="s1">&#39;1.2.1.59&#39;</span>, <span class="s1">&#39;1.2.7.6&#39;</span><span class="o">}</span>
+          <span class="nv">ProcessID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;596cd74b-16b4-49e4-8008-8a1956ff9a25&#39;</span><span class="o">}</span>
+                   -&gt; GraphData.GenericProcesses.GenericProcess.Molecules.Molecule/ProcessID <span class="o">(</span>20/20<span class="o">)</span>
+      &lt;Molecules&gt;
+        &lt;Molecule&gt;
+          <span class="nv">ProcessID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;596cd74b-16b4-49e4-8008-8a1956ff9a25&#39;</span><span class="o">}</span>
+                   -&gt; GraphData.GenericProcesses.GenericProcess.Catalyzes.Catalyze/ProcessID <span class="o">(</span>20/52<span class="o">)</span>
+          <span class="nv">Role</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;product&#39;</span>, <span class="s1">&#39;inhibitor&#39;</span>, <span class="s1">&#39;substrate&#39;</span>, <span class="s1">&#39;cofactor&#39;</span><span class="o">}</span>
+          <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;b3e4ee53-18f8-4e14-90ca-7d2441d7e2c7&#39;</span><span class="o">}</span>
+            -&gt; GraphData.Molecules.Molecule/ID <span class="o">(</span>52/52<span class="o">)</span>
+            -&gt; GraphData.Pathways.Pathway.LinkingPathways.LinkingPathway.LinkingMolecule/ID <span class="o">(</span>32/52<span class="o">)</span>
+  &lt;Molecules&gt;
+    &lt;Molecule&gt;
+      <span class="nv">EntityID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;80fdd82b-8d4d-4669-abea-fa76f23fa7e8&#39;</span><span class="o">}</span>
+              -&gt; GraphData.GenericProcesses.GenericProcess.Catalyzes.Catalyze/GeneProductMoleculeID <span class="o">(</span>21/73<span class="o">)</span>
+      <span class="nv">IsCommon</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;True&#39;</span>, <span class="s1">&#39;False&#39;</span><span class="o">}</span>
+      <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;d86f2eae-86aa-4ef5-a52b-8c091ad2cce0&#39;</span><span class="o">}</span>
+        -&gt; GraphData.GenericProcesses.GenericProcess.Molecules.Molecule/ID <span class="o">(</span>52/73<span class="o">)</span>
+        -&gt; GraphData.Pathways.Pathway.LinkingPathways.LinkingPathway.LinkingMolecule/ID <span class="o">(</span>32/73<span class="o">)</span>
+        -&gt; GraphData.GenericProcesses.GenericProcess.Catalyzes.Catalyze/GeneProductMoleculeID <span class="o">(</span>21/73<span class="o">)</span>
+      <span class="nv">Name</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;Reduced ferredoxin&#39;</span>, <span class="s1">&#39;GDP&#39;</span>, <span class="s1">&#39;3-Phospho-D-glycerate&#39;</span>, <span class="s1">&#39;NADH&#39;</span><span class="o">}</span>
+  &lt;Pathways&gt;
+    &lt;Pathway&gt;
+      <span class="nv">Name</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;Pyruvate metabolism&#39;</span><span class="o">}</span>
+      <span class="nv">Expanded</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;False&#39;</span>, <span class="s1">&#39;True&#39;</span><span class="o">}</span>
+      <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;9d3a7f76-8ad0-4c2c-ba59-ae912713d359&#39;</span><span class="o">}</span>
+        -&gt; GraphData.Pathways.Pathway.LinkingPathways.LinkingPathway/ID <span class="o">(</span>31/32<span class="o">)</span>
+      <span class="nv">Linking</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;True&#39;</span>, <span class="s1">&#39;False&#39;</span><span class="o">}</span>
+      &lt;LinkingPathways&gt;
+        &lt;LinkingPathway&gt;
+          <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;c19f472a-2431-460d-b847-89dacefe8084&#39;</span><span class="o">}</span>
+            -&gt; GraphData.Pathways.Pathway/ID <span class="o">(</span>31/31<span class="o">)</span>
+          <span class="nv">Dir</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;in&#39;</span>, <span class="s1">&#39;out&#39;</span><span class="o">}</span>
+          &lt;LinkingMolecule&gt;
+            <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;3152204b-2844-4dc1-a227-a5b6550b1804&#39;</span><span class="o">}</span>
+              -&gt; GraphData.Molecules.Molecule/ID <span class="o">(</span>32/46<span class="o">)</span>
+              -&gt; GraphData.GenericProcesses.GenericProcess.Molecules.Molecule/ID <span class="o">(</span>32/46<span class="o">)</span>
+      &lt;OrganismGroups&gt;
+        &lt;OrganismGroup&gt;
+          <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;01bea179-c89d-42c7-9add-fbe807f46fe9&#39;</span><span class="o">}</span>
+            -&gt; GraphData.GenericProcesses.GenericProcess.Catalyzes.Catalyze/OrganismGroupID <span class="o">(</span>1412/1416<span class="o">)</span>
+      &lt;GenericProcesses&gt;
+        &lt;GenericProcess&gt;
+          <span class="nv">ID</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;8c8b1006-b06e-4c59-9b1a-84df2c6d0faf&#39;</span><span class="o">}</span>
+            -&gt; GraphData.GenericProcesses.GenericProcess/ID <span class="o">(</span>52/52<span class="o">)</span>
+</pre></div>
+
+
+                <br/>
             </div>
+            <br/>
         </div>
     </body>
 </htmL>

@@ -1,14 +1,12 @@
 <htmL>
     <head>
         <title>Schemutt</title>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="blueprintcss/typography.css"/>
         <link rel="stylesheet" type="text/css" href="blueprintcss/grid.css"/>
         <style type="text/css">
             {{ pygments_css }} 
-
-            pre {
-                background-color: #eaeaff;
-            }
 
             pre.logo {
                 background-color: white;
@@ -16,21 +14,68 @@
                 font-size: 24px;
                 line-height: 1em;
             }
+
+            pre, code, tt {
+                font: 14px 'Inconsolata', 'andale mono', 'lucida console', monospace;
+            }
+
+            h1, h2 {
+                font-family: 'Chewy', cursive;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            pre {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0.2em;
+                background-color: #fafafa;
+            }
+
+            .code .info {
+                background-color: #fafafa;
+                padding: 0.2em;
+                border: 1px solid #aaa;
+                margin-bottom: 1em;
+            }
+
+            body {
+                background-image: url(bg.png);
+            }
+
+            #main {
+                background-color: white;
+            }
         </style>
     </head>
     <body>
-        <div class="container" id="main">
-            <div class="span-24 last">
-                <h1>Schemutt</h1>
-                <h2>An XML Schema Figure-Outer</h2>
-            </div>
+        <div class="container">
+            <div class="span-2">&nbsp;</div>
+            <div class="span-18 prepend-1 append-1 last" id="main">
+                <div class="span-9">
+                    <h1>Schemutt</h1>
+                    <h2>An XML Schema Assistant</h2>
+                </div>
+                <div class="span-9 last" style="text-align: right; margin-top: 3em;">
+                    <p>by <a href="http://www.steveasleep.com/">Steve Johnson</a></p>
+                    <p><a href="http://www.github.com/irskep/schemutt">Fork me on Github</a></p>
+                </div>
 
-            <div class="span-24 last">
+                <hr/>
+
+                <p>Schemutt parses XML documents and displays a high-level view of their structure.</p>
+
                 <p>Imagine that you are asked to parse a file like this without any documentation:</p>
 
                 <div class="code">
-                    <div class="info">simple_example.xml (<a href="simple_example.xml">full version</a>)</div>
                     {{ 'simple_example_abridged.xml'|code }}
+                    <div class="info">simple_example.xml (<a href="simple_example.xml">full version</a>)</div>
                 </div>
 
                 <p>While it might be feasible to go through the file by hand and
@@ -38,7 +83,29 @@
                 correlate, Schemutt can take away some of the pain:</p>
 
                 {{ "simple_example_out.sh"|code }}
+
+                <br/>
+
+                <p>You can easily see how the tags are nested, what their
+                attributes are called, and what their attributes' typical values
+                are.</p>
+
+                <p>Schemutt can be instructed to correlate the values of the
+                attributes with the <tt>--find-foreign-keys</tt> flag, which will identify
+                attributes that share more than 10% of their values:</p>
+
+                {{ "simple_example_out_fk.sh"|code }}
+
+                <br/>
+
+                <p>Here's the result of a more complex example derived from
+                <a href="complex_example.xml">this document</a>:
+
+                {{ "complex_example_out.sh"|code }}
+
+                <br/>
             </div>
+            <br/>
         </div>
     </body>
 </htmL>
